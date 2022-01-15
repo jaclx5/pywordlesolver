@@ -12,10 +12,15 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install
 `pywordlesolver`:
 
 ```bash
-git clone git@github.com:jaclx5/pywordlesolver.git
- 
-pip install wheel
-pip install git+https://github.com/jaclx5/pywordlesolver
+pip install --no-binary :all:  git+https://github.com/jaclx5/pywordlesolver
+```
+
+For development:
+
+```bash
+clone git@github.com:jaclx5/pywordlesolver.git
+
+pip install --no-binary :all:  git+https://github.com/jaclx5/pywordlesolver
 ```
 
 ## Usage

@@ -8,6 +8,7 @@ import argparse
 import copy
 import math
 import os
+import pkg_resources
 import re
 import random
 import sys
@@ -18,7 +19,7 @@ from functools import reduce
 from pywordlesolver import strategies
 from pywordlesolver import utils
 
-WORD_FILE = os.path.join(os.path.dirname(__file__), "../data/words05.txt")
+WORD_FILE = os.path.join(pkg_resources.resource_filename("pywordlesolver", "data"), "words05.txt")
 
 
 # To speed up the first run we precomputed the first try

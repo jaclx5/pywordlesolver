@@ -6,6 +6,8 @@ setup(name='pywordlesolver',
       author='JACLX5',
       author_email='cincominutosdatascience@gmail.com',
       packages=['pywordlesolver'],
-      scripts=['pywordlesolver/wordle.py']
+      scripts=['pywordlesolver/wordle.py'],
+
+      package_data={"pywordlesolver": ["data/*.txt"]}
       )
 
