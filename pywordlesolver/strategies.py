@@ -9,7 +9,7 @@ import random
 
 from collections import Counter
 
-import utils
+from pywordlesolver import utils
 
 LETTER_NUM = 5
 ALL_LETTERS = list(map(chr, range(65, 91))) # all letters A-Z

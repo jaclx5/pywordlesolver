@@ -1,3 +1,5 @@
+#!python
+
 """
 Python only WORDLE solver
 """
@@ -13,10 +15,10 @@ import sys
 from collections import Counter
 from functools import reduce
 
-import strategies
-import utils
+from pywordlesolver import strategies
+from pywordlesolver import utils
 
-WORD_FILE = os.path.join(os.path.dirname(__file__), "./data/words05.txt")
+WORD_FILE = os.path.join(os.path.dirname(__file__), "../data/words05.txt")
 
 
 # To speed up the first run we precomputed the first try
@@ -270,8 +272,10 @@ def interactive_player():
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n
     """)
 
+    words = load_words(WORD_FILE)
+
     # use the random strategy to get a random word
-    solution = strategies.rnd(load_words(WORD_FILE))
+    solution = strategies.rnd(words)
 
     response = None
     n = 0
@@ -280,9 +284,15 @@ def interactive_player():
 
     while True:
         n += 1
-        
-        print(f"\n== Try #{n:10d} ==")
-        guess = input("Type your guess: ").upper()
+
+        guess = ""
+        while guess not in words:        
+            print(f"\n== Try #{n:10d} ==")
+            guess = input("Type your guess: ").upper()
+
+            if guess not in words:
+                print(f"\n{guess} is not a word, sorry")
+                print(f"Try again, please")
 
         response = utils.compute_response(solution, guess)
 
