@@ -18,9 +18,9 @@ pip install --no-binary :all:  git+https://github.com/jaclx5/pywordlesolver
 For development:
 
 ```bash
-clone git@github.com:jaclx5/pywordlesolver.git
+git clone git@github.com:jaclx5/pywordlesolver.git
 
-pip install --no-binary :all:  git+https://github.com/jaclx5/pywordlesolver
+pip install -e pywordlesolver
 ```
 
 ## Usage
