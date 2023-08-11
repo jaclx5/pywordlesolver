@@ -6,11 +6,9 @@ Python only WORDLE solver
 
 import argparse
 import copy
-import math
 import os
 import pkg_resources
 import re
-import random
 import sys
 
 from collections import Counter
@@ -243,7 +241,7 @@ def interactive_solver(strategy):
             break
 
         if not word:
-            print(f"Can't solve it, sorry!\n\n")
+            print("Can't solve it, sorry!\n\n")
             break
 
         print(f"Try #{n}: {word}\n")
@@ -255,7 +253,7 @@ def interactive_player():
     Starts an interactive game player.
     """    
 
-    print(f"""
+    print("""
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Play WORDLE
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -281,8 +279,6 @@ def interactive_player():
     response = None
     n = 0
 
-    import time
-
     while True:
         n += 1
 
@@ -293,7 +289,7 @@ def interactive_player():
 
             if guess not in words:
                 print(f"\n{guess} is not a word, sorry")
-                print(f"Try again, please")
+                print("Try again, please")
 
         response = utils.compute_response(solution, guess)
 
@@ -313,7 +309,7 @@ def interactive_benchmark():
 
     words = load_words(WORD_FILE)
 
-    print(f"Benchmarking:")
+    print("Benchmarking:")
     print(f"- {len(strategies_to_benchmark)} strategies.")
     print(f"- {len(words)} words.")
 
@@ -356,7 +352,7 @@ def interactive_benchmark():
 
             counts.append(count)
         
-        print('\b' * 20 + f"Count of words solved in # tries:")
+        print('\b' * 20 + "Count of words solved in # tries:")
         
         cnt = Counter(counts)
         
